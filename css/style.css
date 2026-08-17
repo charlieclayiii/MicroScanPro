@@ -270,6 +270,43 @@ section:last-of-type{ border-bottom:none; }
 }
 
 /* ---------- problem section ---------- */
+.products-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
+}
+.product-card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  padding:20px;
+  transition:border-color 0.2s ease, transform 0.2s ease;
+}
+.product-card:hover{ border-color:var(--amber); transform:translateY(-4px); }
+.product-img{
+  aspect-ratio:1/1;
+  overflow:hidden;
+  margin-bottom:18px;
+  background:var(--ground);
+}
+.product-img img{ width:100%; height:100%; object-fit:cover; }
+.product-card h3{
+  font-size:22px;
+  margin-bottom:10px;
+}
+.product-card h3 .mono{
+  color:var(--amber);
+  font-family:'IBM Plex Mono',monospace;
+  text-transform:none;
+  font-weight:500;
+  font-size:16px;
+}
+.product-card p{
+  color:var(--paper-dim);
+  font-size:14px;
+  margin:0;
+  line-height:1.55;
+}
+
 .problem-grid{
   display:grid;
   grid-template-columns:1.1fr 0.9fr;
@@ -492,6 +529,7 @@ body.js-ready .reveal.in{ opacity:1; transform:translateY(0); }
 @media (max-width:900px){
   .problem-grid,.readout,.origin{ grid-template-columns:1fr; gap:36px; }
   .steps{ grid-template-columns:1fr; }
+  .products-grid{ grid-template-columns:repeat(2,1fr); }
   .gallery{ grid-template-columns:repeat(2,1fr); grid-auto-rows:180px; }
   .gallery figure.wide{ grid-column:span 2; }
   .metrics{ grid-template-columns:repeat(2,1fr); }
@@ -500,6 +538,7 @@ body.js-ready .reveal.in{ opacity:1; transform:translateY(0); }
 }
 @media (max-width:560px){
   .wrap,.nav,.hero-inner{ padding-left:20px; padding-right:20px; }
+  .products-grid{ grid-template-columns:1fr; }
   .gallery{ grid-template-columns:1fr; }
   .gallery figure.tall{ grid-row:span 1; }
   .metrics{ grid-template-columns:1fr; }
